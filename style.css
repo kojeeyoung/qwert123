@@ -1,0 +1,199 @@
+@charset "UTF-8";
+/* Google Fonts - Noto Sans KR */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #4CAF50; /* Green */
+    --secondary-color: #8BC34A; /* Light Green */
+    --accent-color: #FFC107;   /* Amber */
+    --text-color: #333;
+    --bg-color: #f4f7f6;
+    --border-color: #ddd;
+    --hover-bg: #e0e0e0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+section h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-top: 0;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+section h3 {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #555;
+}
+
+/* Lesson specific styling */
+.lesson {
+    position: relative; /* For the toggle button */
+}
+
+.content-toggle {
+    border: 1px dashed var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #fbfbfb;
+}
+
+.content-toggle .toggle-button {
+    font-weight: bold;
+    color: var(--primary-color);
+    cursor: pointer;
+    text-align: center;
+    padding: 0.8rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    user-select: none; /* Prevent text selection */
+}
+
+.content-toggle .toggle-button:hover {
+    background-color: var(--primary-color);
+}
+
+.lesson-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    padding: 0 1rem; /* Adjust padding as content expands */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out, opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.lesson-content.active {
+    max-height: 2000px; /* Sufficiently large value */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lesson-content p, .lesson-content ul, .lesson-content ol {
+    margin-bottom: 1em;
+}
+
+ul, ol {
+    padding-left: 20px;
+    margin-bottom: 1.5rem;
+}
+
+ul li, ol li {
+    margin-bottom: 0.5rem;
+}
+
+strong {
+    color: var(--primary-color);
+}
+
+.tips ul li strong {
+    color: #DAA520; /* Darker gold for emphasis in tips */
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        margin: 1rem auto;
+        padding: 0 1rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    section h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .content-toggle .toggle-button {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+}
